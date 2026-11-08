@@ -1,0 +1,22 @@
+# Environment variables and secrets
+.env
+.env.*
+
+# Python cache
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Local database backups
+*.sql
+*.dump
+
+backups/
