@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureDocs | Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="brand-icon">S</div>
+                <div>
+                    <h2>SecureDocs</h2>
+                    <span>Document workspace</span>
+                </div>
+            </div>
+
+            <div class="workspace">
+                <span class="workspace-label">WORKSPACE</span>
+                <div class="workspace-name">
+                    <span class="workspace-dot"></span>
+                    My Workspace
+                    <span class="workspace-arrow">⌄</span>
+                </div>
+            </div>
+
+            <nav class="navigation">
+                <span class="nav-label">MENU</span>
+
+                <a class="nav-link active" href="dashboard.html">
+                    <span class="nav-icon">▦</span> Overview
+                </a>
+                <a class="nav-link" href="#" data-section="All Documents">
+                    <span class="nav-icon">▤</span> All Documents
+                </a>
+                <a class="nav-link" href="#" data-section="My Folders">
+                    <span class="nav-icon">▣</span> My Folders
+                </a>
+                <a class="nav-link" href="#" data-section="Starred">
+                    <span class="nav-icon">☆</span> Starred
+                </a>
+                <a class="nav-link" href="#" data-section="Trash">
+                    <span class="nav-icon">♲</span> Trash
+                </a>
+
+                <span class="nav-label section-label">MANAGEMENT</span>
+
+                <a class="nav-link" href="#" data-section="Team Members">
+                    <span class="nav-icon">♙</span> Team Members
+                </a>
+                <a class="nav-link" href="#" data-section="Activity Logs">
+                    <span class="nav-icon">◷</span> Activity Logs
+                </a>
+                <a class="nav-link" href="#" data-section="Settings">
+                    <span class="nav-icon">⚙</span> Settings
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="security-card">
+                    <div class="security-icon">✓</div>
+                    <strong>Your files are protected</strong>
+                    <p>Secure document management for your workspace.</p>
+                </div>
+
+                <button class="logout-button" id="logoutButton">
+                    <span>↪</span> Sign out
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button class="menu-button" id="menuButton" aria-label="Toggle menu">☰</button>
+
+                <div class="breadcrumb">
+                    Workspace <span>/</span> <strong>Overview</strong>
+                </div>
+
+                <div class="topbar-actions">
+                    <label class="search-box">
+                        <span>⌕</span>
+                        <input type="search" id="globalSearch"
+                               placeholder="Search documents..." aria-label="Search documents">
+                        <kbd>⌘ K</kbd>
+                    </label>
+
+                    <button class="icon-button" id="notificationButton"
+                            aria-label="Notifications">♧</button>
+
+                    <div class="profile">
+                        <div class="avatar" id="userAvatar">U</div>
+                        <div class="profile-info">
+                            <strong id="userName">User</strong>
+                            <span>Workspace member</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="page-content">
+                <div class="welcome-row">
+                    <div>
+                        <p class="eyebrow">YOUR WORKSPACE</p>
+                        <h1>Welcome back<span class="welcome-mark">.</span></h1>
+                        <p class="welcome-subtitle" id="welcomeMessage">
+                            Manage your documents securely from one place.
+                        </p>
+                    </div>
+
+                    <button class="primary-button" id="uploadButton">
+                        <span>＋</span> Upload document
+                    </button>
+                    <input type="file" id="fileInput" hidden>
+                </div>
+
+                <div class="notice" id="notice" role="status" aria-live="polite"></div>
+
+                <section class="stats-grid">
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-icon blue">▤</span>
+                            <span class="stat-caption">DOCUMENTS</span>
+                        </div>
+                        <h2 id="totalDocuments">—</h2>
+                        <p>Total documents</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-icon purple">▣</span>
+                            <span class="stat-caption">FOLDERS</span>
+                        </div>
+                        <h2 id="totalFolders">—</h2>
+                        <p>Organized folders</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-icon green">☆</span>
+                            <span class="stat-caption">STARRED</span>
+                        </div>
+                        <h2 id="totalStarred">—</h2>
+                        <p>Important documents</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-icon orange">♙</span>
+                            <span class="stat-caption">TEAM</span>
+                        </div>
+                        <h2 id="totalMembers">—</h2>
+                        <p>Workspace members</p>
+                    </article>
+                </section>
+
+                <section class="quick-section">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Quick actions</h2>
+                            <p>Common tasks to help you get started.</p>
+                        </div>
+                    </div>
+
+                    <div class="quick-grid">
+                        <button class="quick-card" id="quickUpload">
+                            <span class="quick-icon blue">↑</span>
+                            <span>
+                                <strong>Upload a document</strong>
+                                <small>Add a file to your workspace</small>
+                            </span>
+                            <span class="quick-arrow">→</span>
+                        </button>
+
+                        <button class="quick-card" data-section="My Folders">
+                            <span class="quick-icon purple">▣</span>
+                            <span>
+                                <strong>Create a folder</strong>
+                                <small>Organize your documents</small>
+                            </span>
+                            <span class="quick-arrow">→</span>
+                        </button>
+
+                        <button class="quick-card" data-section="Team Members">
+                            <span class="quick-icon green">♙</span>
+                            <span>
+                                <strong>Manage team</strong>
+                                <small>View workspace members</small>
+                            </span>
+                            <span class="quick-arrow">→</span>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="documents-section">
+                    <div class="section-heading documents-heading">
+                        <div>
+                            <h2>Recent documents</h2>
+                            <p>Your latest workspace activity.</p>
+                        </div>
+                        <button class="text-button" data-section="All Documents">
+                            View all →
+                        </button>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>NAME</th>
+                                    <th>OWNER</th>
+                                    <th>LAST MODIFIED</th>
+                                    <th>SIZE</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody id="documentTable">
+                                <tr>
+                                    <td colspan="5" class="empty-cell">
+                                        <div class="empty-icon">▤</div>
+                                        <strong>No documents yet</strong>
+                                        <p>Your documents will appear here when the document API is connected.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <footer class="footer">
+                    <span>© 2026 SecureDocs</span>
+                    <span>Secure document management</span>
+                </footer>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

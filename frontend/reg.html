@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureDocs | Create Account</title>
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+    <main class="auth-container">
+
+        <section class="brand-section">
+            <div class="brand">
+                <div class="brand-icon">S</div>
+                <span>SecureDocs</span>
+            </div>
+
+            <div class="brand-content">
+                <span class="eyebrow">GET STARTED WITH SECUREDOCS</span>
+                <h1>A smarter way to manage your documents.</h1>
+                <p>
+                    Create your account and start organizing
+                    your important documents securely.
+                </p>
+            </div>
+
+            <div class="brand-footer">
+                © 2026 SecureDocs. All rights reserved.
+            </div>
+        </section>
+
+        <section class="form-section">
+
+            <div class="form-wrapper">
+
+                <div class="mobile-brand">
+                    <div class="brand-icon">S</div>
+                    <span>SecureDocs</span>
+                </div>
+
+                <div class="form-heading">
+                    <h2>Create your account</h2>
+                    <p>Fill in your details to get started.</p>
+                </div>
+
+                <form id="registerForm">
+
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input
+                            type="text"
+                            id="username"
+                            placeholder="Choose a username"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+
+                        <div class="password-wrapper">
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="toggle-password"
+                                id="togglePassword"
+                            >
+                                Show
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="message" class="message" role="alert"></div>
+
+                    <button type="submit" id="registerButton" class="primary-btn">
+                        Create account
+                    </button>
+
+                </form>
+
+                <div class="form-footer">
+                    Already have an account?
+                    <a href="index.html">Sign in</a>
+                </div>
+
+                <div class="security-note">
+                    <span>🔒</span>
+                    Your workspace is protected.
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+    min-height: 100vh;
+}
+
+.auth-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Brand Section */
+
+.brand-section {
+    width: 45%;
+    background: #101d38;
+    color: white;
+    padding: 55px 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #4778f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    font-weight: 800;
+    color: white;
+}
+
+.brand-content {
+    max-width: 480px;
+}
+
+.eyebrow {
+    color: #8caafc;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.brand-content h1 {
+    font-size: 42px;
+    line-height: 1.25;
+    margin: 22px 0;
+}
+
+.brand-content p {
+    color: #b6c1d5;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.brand-footer {
+    color: #8d9bb5;
+    font-size: 12px;
+}
+
+/* Form Section */
+
+.form-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 410px;
+}
+
+.form-heading {
+    margin-bottom: 35px;
+}
+
+.form-heading h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #172033;
+}
+
+.form-heading p {
+    color: #788397;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Input Fields */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.form-group input {
+    width: 100%;
+    height: 49px;
+    padding: 0 15px;
+    border: 1px solid #dce2ec;
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+    font-size: 13px;
+    background: white;
+    transition: 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #4778f5;
+    box-shadow: 0 0 0 3px rgba(71, 120, 245, 0.12);
+}
+
+.form-group input::placeholder {
+    color: #a5adbb;
+}
+
+/* Password */
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 65px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    color: #4778f5;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Button */
+
+.primary-btn {
+    width: 100%;
+    height: 50px;
+    background: #315fe8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.primary-btn:hover {
+    background: #244dc8;
+}
+
+.primary-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* Messages */
+
+.message {
+    display: none;
+    padding: 12px;
+    margin-bottom: 18px;
+    border-radius: 7px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.message.success {
+    display: block;
+    color: #167647;
+    background: #e9f8f0;
+}
+
+.message.error {
+    display: block;
+    color: #b42318;
+    background: #fff0ef;
+}
+
+/* Footer */
+
+.form-footer {
+    text-align: center;
+    font-size: 13px;
+    color: #788397;
+    margin-top: 25px;
+}
+
+.form-footer a {
+    color: #315fe8;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+.security-note {
+    text-align: center;
+    color: #929bad;
+    font-size: 12px;
+    margin-top: 45px;
+}
+
+.security-note span {
+    margin-right: 5px;
+}
+
+.mobile-brand {
+    display: none;
+}
+
+/* Responsive Design */
+
+@media (max-width: 850px) {
+    .brand-section {
+        width: 40%;
+        padding: 35px;
+    }
+
+    .brand-content h1 {
+        font-size: 32px;
+    }
+
+    .form-section {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 650px) {
+    .auth-container {
+        flex-direction: column;
+    }
+
+    .brand-section {
+        display: none;
+    }
+
+    .form-section {
+        min-height: 100vh;
+        padding: 30px 22px;
+    }
+
+    .mobile-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 21px;
+        font-weight: 700;
+        margin-bottom: 55px;
+    }
+
+    .form-heading h2 {
+        font-size: 26px;
+    }
+}
