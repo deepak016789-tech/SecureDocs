@@ -20,3 +20,5 @@ venv/
 *.dump
 
 backups/
+# Private authentication keys
+backend/app/keys/private_key.pem
