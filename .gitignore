@@ -22,3 +22,9 @@ venv/
 backups/
 # Private authentication keys
 backend/app/keys/private_key.pem
+# Local Docker configuration and backups
+compose.db.yaml
+compose.yaml.backup
+
+# Temporary authentication keys
+backend/app/keys/private_key.pem.new
