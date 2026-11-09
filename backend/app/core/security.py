@@ -7,13 +7,13 @@ import jwt
 from jwt.exceptions import InvalidTokenError
 
 load_dotenv()
-if os.getenv("BASE_URL") is None:
-    raise AttributeError("BASE_URL is missing from environment")
+if os.getenv("KEY_URL") is None:
+    raise AttributeError("Key is missing from environment")
 
 if os.getenv("JWT_ALGORITHM") is None:
     raise AttributeError("JWT_ALGORITHM is missing from environment")
 
-BASE_URL=Path(os.getenv("BASE_URL"))
+KEY_URL=Path(os.getenv("KEY_URL"))
 
 ALGORITHM=os.getenv("JWT_ALGORITHM")
 
@@ -26,7 +26,7 @@ def verify_password(plain_password:str,hashed_password:str)->bool:
     return password_hash.verify(plain_password,hashed_password)
 
 def Create_Token(user_id:int)->str:
-    path=BASE_URL/"private_key.pem"
+    path=KEY_URL/"private_key.pem"
 
     with open(path,"r",encoding="utf-8") as file:
         PRIVATE_KEY=file.read()
@@ -48,7 +48,7 @@ def Create_Token(user_id:int)->str:
     return token
 
 def validate_Token(token:str):
-    path=BASE_URL/"public_key.pem"
+    path=KEY_URL/"public_key.pem"
 
     with open(path,"r",encoding="utf-8") as file:
         PUBLIC_KEY=file.read()

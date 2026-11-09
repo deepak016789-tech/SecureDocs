@@ -1,5 +1,4 @@
 services:
-
   backend:
     build:
       context: ./backend
@@ -14,6 +13,8 @@ services:
 
     environment:
       DATABASE_URL: ${DATABASE_URL}
+      KEY_URL: ${KEY_URL}
+      JWT_ALGORITHM: ${JWT_ALGORITHM}
 
 volumes:
   securedocs_data:
